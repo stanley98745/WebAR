@@ -39,17 +39,18 @@
 <body style="margin:0; overflow:hidden;">
     <a-scene embedded arjs="" artoolkit="">
         <a-assets timeout="10000">
-            <img id="watchImage" src="res/pattern-marker.png">
+            <img id="watchImage" src="res/pattern-farming.png">
             <video id="waterVideo" loop="false" autoplay="false" src="res/ARdemo.mp4" preload="auto"></video>
         </a-assets>
-        <a-marker preset='custom' type='pattern' url="res/pattern-marker.patt" registerevents>
+        <a-marker preset='custom' type='pattern' url="res/pattern-farming.patt" registerevents>
             <!--
                 <a-image id="watch" src="#watchImage" height="2" width="1" position="0 1 0"></a-image>
             -->
             <a-video id="water" 
                      src="#waterVideo"
+                     position="0 0.5 0"
                      rotation="-90 0 0" 
-                     material="opacity: 0.8;" 
+                     material="opacity: 0.85;" 
                      autoplay="false">
             </a-video>
         </a-marker>

@@ -66,7 +66,7 @@ AFRAME.registerComponent('videoEvent2', {
 
                 marker.addEventListener('markerFound', function() {
                     // Alright, a marker has been found. Let's get the video element
-                    var vid = document.getElementById('Video1');
+                    var vid = document.getElementById('Video2');
 
                     // Make sure that the video a-frame object is visible
                     document.querySelector('#vid2').setAttribute('visible', true);

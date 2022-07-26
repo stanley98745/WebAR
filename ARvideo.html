@@ -10,10 +10,23 @@
 <body style="margin:0; overflow:hidden;">
     <a-scene embedded arjs="" artoolkit="">
         <a-assets timeout="10000">
+            <video id="Video0" loop="false" autoplay="false" src="res/ARdemo.mp4" preload="auto"></video>
             <video id="Video1" loop="false" autoplay="false" src="res/ARdemo.mp4" preload="auto"></video>
-            <video id="Video2" loop="false" autoplay="false" src="res/ARdemo.mp4" preload="auto"></video>
         </a-assets>
+        
+        //marker0
         <a-marker type="pattern" url="res/marker/marker-0.patt" registerevents>
+            <a-video id="vid0" 
+                     src="#Video0"
+                     position="0 1 0"
+                     rotation="-90 0 0" 
+                     material="opacity: 1;" 
+                     autoplay="false">
+            </a-video>
+        </a-marker>
+        
+        //marker1
+        <a-marker type="pattern" url="res/marker/marker-1.patt" registerevents>
             <a-video id="vid1" 
                      src="#Video1"
                      position="0 1 0"

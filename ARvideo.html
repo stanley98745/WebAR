@@ -8,7 +8,7 @@
     <script>
         // We're going to register a custom event listener through a-frame that will fire
         // whenever a marker has entered the camera view and is found through ar.js
-        AFRAME.registerComponent('registerevents', {
+        AFRAME.registerComponent('video_events0', {
             init: function() {
                 var marker = this.el;
 
@@ -41,7 +41,7 @@
         <a-assets timeout="10000">
             <video id="video0" loop="false" autoplay="false" src="res/ARdemo.mp4" preload="auto"></video>
         </a-assets>
-        <a-marker type="pattern" url="res/marker/marker-0.patt" registerevents>
+        <a-marker type="pattern" url="res/marker/marker-0.patt" video_events0>
             <!--
                 <a-image id="watch" src="#watchImage" height="2" width="1" position="0 1 0"></a-image>
             -->

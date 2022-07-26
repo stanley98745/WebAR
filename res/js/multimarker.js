@@ -10,10 +10,10 @@ AFRAME.registerComponent('registerevents', {
 
                 marker.addEventListener('markerFound', function() {
                     // Alright, a marker has been found. Let's get the video element
-                    var vid = document.getElementById('waterVideo');
+                    var vid = document.getElementById('Video1');
 
                     // Make sure that the video a-frame object is visible
-                    document.querySelector('#water').setAttribute('visible', true);
+                    document.querySelector('#vid1').setAttribute('visible', true);
 
                     // Reset the video to the beginning and play it through
                     vid.currentTime = 0;                    
@@ -22,7 +22,7 @@ AFRAME.registerComponent('registerevents', {
                     // Once the video has completed, we're going to hide the a-video element
                     // which will display the a-image element with the watch behind it
                     vid.addEventListener('ended', function(e) {
-                        document.querySelector('#water').setAttribute('visible', false);
+                        document.querySelector('#vid1').setAttribute('visible', false);
                     });
                 });
             }

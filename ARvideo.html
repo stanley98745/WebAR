@@ -10,25 +10,25 @@
         // whenever a marker has entered the camera view and is found through ar.js
         AFRAME.registerComponent('video_events0', {
             init: function() {
-                var marker = this.el;
+                var marker_0 = this.el;
 
                 // Element emits events when found and lost
-                marker.setAttribute('emitevents', 'true');
+                marker_0.setAttribute('emitevents', 'true');
 
-                marker.addEventListener('markerFound', function() {
+                marker_0.addEventListener('markerFound', function() {
                     // Alright, a marker has been found. Let's get the video element
-                    var vid = document.getElementById('video0');
+                    var vid_0 = document.getElementById('video0');
 
                     // Make sure that the video a-frame object is visible
                     document.querySelector('#vid0').setAttribute('visible', true);
 
                     // Reset the video to the beginning and play it through
-                    vid.currentTime = 0;                    
-                    vid.play();
+                    vid_0.currentTime = 0;                    
+                    vid_0.play();
                     
                     // Once the video has completed, we're going to hide the a-video element
                     // which will display the a-image element with the watch behind it
-                    vid.addEventListener('ended', function(e) {
+                    vid_0.addEventListener('ended', function(e) {
                         document.querySelector('#vid0').setAttribute('visible', false);
                     });
                 });
@@ -37,25 +37,25 @@
         
         AFRAME.registerComponent('video_events1', {
             init: function() {
-                var marker = this.el;
+                var marker_1 = this.el;
 
                 // Element emits events when found and lost
-                marker.setAttribute('emitevents', 'true');
+                marker_1.setAttribute('emitevents', 'true');
 
-                marker.addEventListener('markerFound', function() {
+                marker_1.addEventListener('markerFound', function() {
                     // Alright, a marker has been found. Let's get the video element
-                    var vid = document.getElementById('video1');
+                    var vid_1 = document.getElementById('video1');
 
                     // Make sure that the video a-frame object is visible
                     document.querySelector('#vid1').setAttribute('visible', true);
 
                     // Reset the video to the beginning and play it through
-                    vid.currentTime = 0;                    
-                    vid.play();
+                    vid_1.currentTime = 0;                    
+                    vid_1.play();
                     
                     // Once the video has completed, we're going to hide the a-video element
                     // which will display the a-image element with the watch behind it
-                    vid.addEventListener('ended', function(e) {
+                    vid_1.addEventListener('ended', function(e) {
                         document.querySelector('#vid1').setAttribute('visible', false);
                     });
                 });

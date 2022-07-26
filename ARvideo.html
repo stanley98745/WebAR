@@ -34,8 +34,37 @@
                 });
             }
         });
+        
+        AFRAME.registerComponent('video_events1', {
+            init: function() {
+                var marker = this.el;
+
+                // Element emits events when found and lost
+                marker.setAttribute('emitevents', 'true');
+
+                marker.addEventListener('markerFound', function() {
+                    // Alright, a marker has been found. Let's get the video element
+                    var vid = document.getElementById('video1');
+
+                    // Make sure that the video a-frame object is visible
+                    document.querySelector('#vid1').setAttribute('visible', true);
+
+                    // Reset the video to the beginning and play it through
+                    vid.currentTime = 0;                    
+                    vid.play();
+                    
+                    // Once the video has completed, we're going to hide the a-video element
+                    // which will display the a-image element with the watch behind it
+                    vid.addEventListener('ended', function(e) {
+                        document.querySelector('#vid1').setAttribute('visible', false);
+                    });
+                });
+            }
+        });
     </script>
 </head>
+    
+    
 <body style="margin:0; overflow:hidden;">
     <a-scene embedded arjs="" artoolkit="">
         <a-assets timeout="10000">
@@ -47,6 +76,19 @@
             -->
             <a-video id="vid0" 
                      src="#video0"
+                     position="0 1 0"
+                     rotation="-90 0 0" 
+                     material="opacity: 1;" 
+                     autoplay="false">
+            </a-video>
+        </a-marker>
+        
+        <a-marker type="pattern" url="res/marker/marker-1.patt" video_events1>
+            <!--
+                <a-image id="watch" src="#watchImage" height="2" width="1" position="0 1 0"></a-image>
+            -->
+            <a-video id="vid1" 
+                     src="#video1"
                      position="0 1 0"
                      rotation="-90 0 0" 
                      material="opacity: 1;" 
